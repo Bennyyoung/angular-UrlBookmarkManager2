@@ -5,7 +5,7 @@
 <button (click)="showBookmarkForm = !showBookmarkForm" class="btn btn-dark mb-3">Add new bookmark</button>
 <button (click)="viewBookmarks = !viewBookmarks" class="btn btn-danger mb-3">View bookmarks</button>
 <button (click)="favouriteBookmark = !favouriteBookmark" class="btn btn-info mb-3">
-  <i class="fa" [ngClass]="{ 'fa-heart': favouriteBookmark || !favouriteBookmark }"></i>
+  <i class="fa" [ngClass]="{ 'fa-heart': favouriteBookmark || !favouriteBookmark }">View Favourites</i>
 </button>
 
 <div class="card card-body mb-3" *ngIf="showBookmarkForm">
@@ -91,15 +91,15 @@
         <a>{{ bookmark.name | uppercase }} </a>
 
         <button (click)="removeBookmark(bookmark)" class="btn btn-danger">
-          <i class="fa fa-remove"></i>
+          <i class="fa fa-remove">Delete</i>
         </button>
         <button (click)="editBookmark(bookmark)" class="btn btn-light">
-          <i class="fa fa-pencil"></i>
+          <i class="fa fa-pencil">Edit</i>
         </button>
       </div>
 
       <button (click)="addFavourite($event, bookmark)" class="btn btn-info">
-        <i class="fa" [ngClass]="{ 'fa-heart': addFavourite }"> </i>
+        <i class="fa" [ngClass]="{ 'fa-heart': addFavourite }"> Favourite</i>
       </button>
 
       <hr />
